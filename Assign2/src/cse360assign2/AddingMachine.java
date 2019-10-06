@@ -1,7 +1,8 @@
 package cse360assign2;
-
 /*
  * @author: Alex Cyrwus
+ * 
+ * Repo Link: https://github.com/acyrwus/Assign2.git
  * 
  * This class functions as a simple calculator
  * It also has the ability to keep track of the commands it has used.
@@ -10,9 +11,11 @@ package cse360assign2;
 public class AddingMachine {
 
 	private int total;
+	private String receipt;
 	
 	public AddingMachine () {
-		total = 0;  // not needed - included for clarity
+		total = 0;
+		receipt = "0";  
 	}
 	
 	/*
@@ -20,7 +23,7 @@ public class AddingMachine {
 	 * @return: Total value
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/*
@@ -29,7 +32,8 @@ public class AddingMachine {
 	 */
 	
 	public void add (int value) {
-		
+		total += value;
+		receipt = receipt + " + " + Integer.toString(value);
 	}
 	
 	/*
@@ -38,7 +42,8 @@ public class AddingMachine {
 	 */
 	
 	public void subtract (int value) {
-		
+		total -= value;
+		receipt = receipt + " - " + Integer.toString(value);
 	}
 	
 	/*
@@ -47,10 +52,15 @@ public class AddingMachine {
 	 */
 	
 	public String toString () {
-		return "";
+		return receipt;
 	}
 
-	public void clear() {
+	/*
+	 * Resets the total and string
+	 */
 	
+	public void clear() {
+		total = 0;
+		receipt = "0";
 	}
 }
